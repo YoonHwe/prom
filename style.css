@@ -1,0 +1,102 @@
+html{}
+body{
+    height: 100vh;
+    margin: 0;
+}
+/* nav.html */
+#nav{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 0%;
+    border-top: 2px solid black;
+    bottom: 0px;
+    width: 100%;
+}
+.nav_content{
+    color: black;
+}
+#nav_search{
+    margin-left: 10%
+}
+#nav_user{
+    margin-right: 10%;
+}
+.nav_content:hover{
+    color: gray;
+}
+#nav_alt{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 0%;
+    border-top: 2px solid black;
+    bottom: 200px;
+    width: 100%;
+}
+/* index.html */
+#main_first{
+    border: 3px solid green;
+}
+#main_first_title{
+    text-align: center;
+}
+#main_first_subtitle{
+    text-align: center;
+    border-bottom: 1px solid black;
+    margin: 0% 8%;
+    padding-bottom: 2px;
+}
+#main_second{
+    padding: 0% 4%;
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid blue;
+}
+#main_second_select{
+    padding: 10px 32px 10px 8px;
+}
+#main_second_button{
+    display: flex;
+    align-items: center;
+}
+#main_second_button_like_on{
+    border: 1px solid black;
+    padding: 8px 4px;
+    margin-left: 1%;
+    width: 80px;
+    text-align: center; 
+    border-radius: 10px; 
+    background-color: black;
+    color: yellow;
+}
+#main_second_button_candidate_on{
+    border: 1px solid black;
+    padding: 8px 4px;
+    margin-left: 1%;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: black;
+    color: yellow;
+}
+#main_second_button_like_off{
+    border: 1px solid black;
+    padding: 8px 4px;
+    margin-left: 1%;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
+#main_second_button_candidate_off{
+    border: 1px solid black;
+    padding: 8px 4px;
+    margin-left: 1%;
+    width: 80px;
+    text-align: center;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+}
