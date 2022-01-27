@@ -1,6 +1,6 @@
 html{}
 body{
-    height: 100vh;
+    /* height: 1000vh; */
     margin: 0;
 }
 /* nav.html */
@@ -16,7 +16,7 @@ body{
 .nav_content{
     color: black;
 }
-#nav_search{
+#nav_home{
     margin-left: 10%
 }
 #nav_user{
@@ -49,6 +49,8 @@ body{
 }
 #main_second{
     padding: 0% 4%;
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
     justify-content: space-between;
     border: 3px solid blue;
@@ -60,16 +62,6 @@ body{
     display: flex;
     align-items: center;
 }
-#main_second_button_like_on{
-    border: 1px solid black;
-    padding: 8px 4px;
-    margin-left: 1%;
-    width: 80px;
-    text-align: center; 
-    border-radius: 10px; 
-    background-color: black;
-    color: yellow;
-}
 #main_second_button_candidate_on{
     border: 1px solid black;
     padding: 8px 4px;
@@ -80,16 +72,6 @@ body{
     background-color: black;
     color: yellow;
 }
-#main_second_button_like_off{
-    border: 1px solid black;
-    padding: 8px 4px;
-    margin-left: 1%;
-    width: 80px;
-    text-align: center;
-    border-radius: 10px;
-    background-color: white;
-    color: black;
-}
 #main_second_button_candidate_off{
     border: 1px solid black;
     padding: 8px 4px;
@@ -99,4 +81,22 @@ body{
     border-radius: 10px;
     background-color: white;
     color: black;
+}
+#main_second_button div:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+#gototop:hover{
+    visibility: visible;
+    cursor: pointer;
+    background-color: blue;
+}
+#main_first_field_box_set div:hover{
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+}
+#main_filter i:hover{
+    color: gold;
+    cursor: pointer;
 }

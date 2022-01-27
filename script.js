@@ -58,19 +58,32 @@
 //     }
 // }
 
+// const goToTop = document.querySelector("#gototop");
+// goToTop.addEventListener("click", moveToTop)
+// window.addEventListener("scroll", goToTopHide);
+
+// function goToTopHide(){
+//     goToTop.style.visibility = "visible";
+//     const hide = setTimeout(function(){
+//         goToTop.style.visibility = "hidden";
+//     }, 5000);
+// }
+
+function moveToTop(){
+    $('html, body').scrollTop(0);
+}
+function fnMove(){
+    $('html, body').animate({scrollTop: 0}, 400);
+}
 //index.html
 const buttonLikeOn = document.querySelector("#main_second_button_like_on");
 const buttonCandidateOn = document.querySelector("#main_second_button_candidate_on");
 const buttonLikeOff = document.querySelector("#main_second_button_like_off");
 const buttonCandidateOff = document.querySelector("#main_second_button_candidate_off");
 
-const contentCandidate = document.querySelectorAll("#main_content_box_head_name");
-const contentLike = document.querySelectorAll("#main_content_box_tail_like");
+const contentCandidate = document.querySelectorAll("#main_content_box_tail_name");
 
-buttonLikeOn.addEventListener("click", changeLikeButton);
 buttonCandidateOn.addEventListener("click", changeCandidateButton);
-// buttonLikeOff.addEventListener("click", makeButtonOn);
-// buttonCandidateOff.addEventListener("click", makeButtonOn);
 
 function changeLikeButton(event){
     let selectedId = event.path[0].id;
@@ -106,4 +119,105 @@ function changeCandidateButton(event){
         })
     }
     target.id = selectedId
+}
+
+const field = document.querySelectorAll("#main_first_field_box_set div");
+const fieldAll = field[0];
+const fieldOne = field[1];
+const fieldTwo = field[2];
+const fieldThree = field[3];
+const fieldFour = field[4];
+const contentBox = document.querySelectorAll("#main_content_box"); 
+// const bodyField = document.querySelectorAll("#main_content_box_head_field");
+field[0].style.backgroundColor = "black";
+field[0].style.color = "white";
+fieldAll.addEventListener("click", fieldAllFilter)
+fieldOne.addEventListener("click", fieldOneFilter);
+fieldTwo.addEventListener("click", fieldTwoFilter);
+fieldThree.addEventListener("click", fieldThreeFilter);
+fieldFour.addEventListener("click", fieldFourFilter);
+function fieldAllFilter(){
+    for(i = 0; i < field.length; i++){
+        field[i].style.backgroundColor = "white";
+        field[i].style.color = "black";
+    }
+    fieldAll.style.backgroundColor = "black";
+    fieldAll.style.color = "white";
+    for(i = 0; i < contentBox.length; i++){
+        const bodyField = contentBox[i].querySelector("#main_content_box_head_field");
+        console.log(bodyField);
+        contentBox[i].style.display = "";
+    }
+}
+function fieldOneFilter(){
+    for(i = 0; i < field.length; i++){
+        field[i].style.backgroundColor = "white";
+        field[i].style.color = "black";
+    }
+    fieldOne.style.backgroundColor = "black";
+    fieldOne.style.color = "white";
+    for(i = 0; i < contentBox.length; i++){
+        const bodyField = contentBox[i].querySelector("#main_content_box_head_field");
+        console.log(bodyField);
+        if(fieldOne.innerText == bodyField.innerText){
+            contentBox[i].style.display = "";
+        }
+        else{
+            contentBox[i].style.display = "none";
+        }
+    }
+}
+function fieldTwoFilter(){
+    for(i = 0; i < field.length; i++){
+        field[i].style.backgroundColor = "white";
+        field[i].style.color = "black";
+    }
+    fieldTwo.style.backgroundColor = "black";
+    fieldTwo.style.color = "white";
+    for(i = 0; i < contentBox.length; i++){
+        const bodyField = contentBox[i].querySelector("#main_content_box_head_field");
+        console.log(bodyField);
+        if(fieldTwo.innerText == bodyField.innerText){
+            contentBox[i].style.display = "";
+        }
+        else{
+            contentBox[i].style.display = "none";
+        }
+    }
+}
+function fieldThreeFilter(){
+    for(i = 0; i < field.length; i++){
+        field[i].style.backgroundColor = "white";
+        field[i].style.color = "black";
+    }
+    fieldThree.style.backgroundColor = "black";
+    fieldThree.style.color = "white";
+    for(i = 0; i < contentBox.length; i++){
+        const bodyField = contentBox[i].querySelector("#main_content_box_head_field");
+        console.log(bodyField);
+        if(fieldThree.innerText == bodyField.innerText){
+            contentBox[i].style.display = "";
+        }
+        else{
+            contentBox[i].style.display = "none";
+        }
+    }
+}
+function fieldFourFilter(){
+    for(i = 0; i < field.length; i++){
+        field[i].style.backgroundColor = "white";
+        field[i].style.color = "black";
+    }
+    fieldFour.style.backgroundColor = "black";
+    fieldFour.style.color = "white";
+    for(i = 0; i < contentBox.length; i++){
+        const bodyField = contentBox[i].querySelector("#main_content_box_head_field");
+        console.log(bodyField);
+        if(fieldFour.innerText == bodyField.innerText){
+            contentBox[i].style.display = "";
+        }
+        else{
+            contentBox[i].style.display = "none";
+        }
+    }
 }
