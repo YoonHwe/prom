@@ -1,8 +1,11 @@
+//detail.html
+
+//링크 복사하기
 const detailHeadShare = document.querySelector("#detail_head_share");
 detailHeadShare.addEventListener("click", copyLink);
 
 function copyLink(event){
-    let confirmBoolean = confirm("제출하시겠습니까?");
+    let confirmBoolean = confirm("링크를 복사하시겠습니까?");
     if(confirmBoolean == false){
         event.preventDefault();
     }

@@ -6,56 +6,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
     <title>홈 화면</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../static/css/bootstrap.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../../static/fo/style.css">
 </head>
-<body style="border: 1px solid black;">
+<body>
     <div id="main_first">
-        <div style="display: flex; justify-content: center; align-items: center; border-bottom: 1px solid black; margin: 0% 16%;">
-            <div>
-                <h2 id="main_first_title" style="text-align: center;">제 20대 대통령 선거</h2>
-                <h3 id="main_first_subtitle" style="text-align: center; margin-top: -16px;">D - DAY</h3>
+        <div id="main_first_top">
+            <div id="main_first_title">
+                <h3 id="main_first_title_upper">제 20대 대통령 선거</h3>
+                <h4 id="main_first_title_lower">D - ?</h4>
             </div>
-            <div style="position: absolute; right: 8%;">
-                <i style="font-size: 32px;" class="fas fa-search"></i>
+            <div id="main_first_search">
+                <i data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="fas fa-search"></i>
             </div>
         </div>
-        <h2 id="main_first_field_title" style="text-align: center;">분야별로 공약 보기</h2>
-        <div id="main_first_field_box" style="overflow: auto; border: 3px solid gold; display: flex;">
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">전체</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 1</div>
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel"><form id="modal_search"><input type="text" placeholder=" 공약을 검색하실 수 있어요!" required></form></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p></p>
+                    </div> 
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 2</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 3</div>
+        </div>
+        <!-- -->
+        <h3 id="main_first_field_title">분야별로 공약 보기</h3>
+        <div id="main_first_field_box">
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_all">전체</div>
+                <div id="main_first_field_box_set_one">분야 1</div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 4</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 5</div>
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_two">분야 2</div>
+                <div id="main_first_field_box_set_three">분야 3</div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 6</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 7</div>
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_four">분야 4</div>
+                <div id="main_first_field_box_set_five">분야 5</div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 8</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 9</div>
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_six">분야 6</div>
+                <div id="main_first_field_box_set_seven">분야 7</div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 10</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 11</div>
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_eight">분야 8</div>
+                <div id="main_first_field_box_set_nine">분야 9</div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 12</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 13</div>
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_ten">분야 10</div>
+                <div id="main_first_field_box_set_eleven">분야 11</div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 14</div>
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 15</div>
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_twelve">분야 12</div>
+                <div id="main_first_field_box_set_thirteen">분야 13</div>
             </div>
-            <div id="main_first_field_box_set">
-                <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 16</div>
-                <!-- <div style="border: 1px solid black; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; margin: 10px;">분야 17</div> -->
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_fourteen">분야 14</div>
+                <div id="main_first_field_box_set_fifteen">분야 15</div>
+            </div>
+            <div class="main_first_field_box_set">
+                <div id="main_first_field_box_set_sixteen">분야 16</div>
             </div>
         </div>
     </div>
@@ -63,151 +82,337 @@
         <div id="main_second_button">
             <div id="main_second_button_candidate_on">후보 보이기</div>
         </div>
-        <div id="main_filter" style="display: flex; align-items: center; font-size: 18px; padding: 0%; font-weight: 700;">
-            <i class="fas fa-filter fa-2x"></i>&nbsp;필터
+        <div id="main_filter">
+            <i data-bs-toggle="modal" data-bs-target="#staticBackdropTwo" class="fas fa-filter fa-lg"></i>&nbsp;필터
         </div>
-    </div>
-    <div id="main_content" style="margin-top: 20px;">
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 1</div>
-            </div>
-            <a href="detail.html" style="text-decoration: none; color: black">
-                <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">                        
-                    <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                    <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
+        <div class="modal" id="staticBackdropTwo">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">후보별로 공약보기</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true"></span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="btn-group" id="filter_by_candidate" role="group" aria-label="Basic radio toggle button group">
+                            <div class="filter_by_candidate_box">
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
+                                <label class="btn btn-outline-primary" for="btnradio1">모든 후보</label>
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btnradio2">이재명</label>
+                            </div>
+                            <div class="filter_by_candidate_box"> 
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btnradio3">윤석열</label>
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btnradio4">안철수</label>    
+                            </div>
+                            <div class="filter_by_candidate_box">
+                                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                                <label class="btn btn-outline-primary" for="btnradio5">심상정</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-header">
+                        <h5 class="modal-title">키워드별로 공약보기</h5>
+                    </div>
+                    <div class="modal-body">
+                        <div id="filter_by_keyword" class="btn-group" role="group" aria-label="Basic radio toggle button group" style="display: block;">
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio101" autocomplete="off" checked="">
+                            <label class="btn btn-outline-primary" for="btnradio101">#전체</label>
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio102" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio102">#N번방</label>
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio103" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio103">#중국</label>
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio104" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio104">#암호화폐</label>    
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio105" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio105">#코로나</label>
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio106" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio106">#부동산</label>
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio107" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio107">#금리</label>
+                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio108" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio108">#미국</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="filter_init" type="button" class="btn btn-primary">초기화</button>
+                        <button id="filter_submit" type="button" class="btn btn-primary">적용</button>
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
                 </div>
-            </a>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 1</div>
-            </div>
-            <a href="detail.html" style="text-decoration: none; color: black">
-                <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                    <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                    <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-                </div>
-            </a>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 1</div>
-            </div>
-            <a href="detail.html" style="text-decoration: none; color: black">
-                <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                    <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                    <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-                </div>
-            </a>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 2</div>
-            </div>
-            <a href="detail.html" style="text-decoration: none; color: black">
-                <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                    <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                    <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-                </div>
-            </a>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 2</div>
-            </div>
-            <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-            </div>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 3</div>
-            </div>
-            <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-            </div>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 4</div>
-            </div>
-            <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-            </div>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 4</div>
-            </div>
-            <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-            </div>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 5</div>
-            </div>
-            <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-            </div>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
-            </div>
-        </div>
-        <div id="main_content_box" style="margin: 0% 4%; margin-top: 10px; border: 1px solid black;">
-            <div id="main_content_box_head" style="display: flex;">
-                <div id="main_content_box_head_checkbox" style="border-right: 1px solid black; padding: 2px 0px;"><input type="checkbox">&nbsp;</div>
-                <div id="main_content_box_head_field" style="padding: 2px 0px; margin: auto 8px; ">분야 6</div>
-            </div>
-            <div id="main_content_box_body" style="padding: 0% 2%; border-top: 1px solid black;">
-                <h3 id="main_content_box_body_title" style="text-decoration: underline;">[OO분야] 제목입니다. 제목입니다. 제목입니다. 제목입니다.</h3>
-                <p id="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다.</p>
-            </div>
-            <div id="main_content_box_tail" style="display: flex; justify-content: space-between; border-top: 1px solid black; padding: 0% 2%;">
-                <div id="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
             </div>
         </div>
     </div>
-    <div id="main_compare" style="display: none; border: 1px solid black; text-align: center; width: 34%; margin: 0 auto; position: fixed; bottom: 50px; left: 33%; padding: 10px 0px; border-radius: 10px;">공약 비교하기</div>
+    <div id="main_content">
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 1</div>
+            </div>            
+            <div class="main_content_box_body">                     
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 이재명</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#N번방</span>
+                    <span>#미국</span>
+                    <span>#코로나</span>
+                </div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 2</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 윤석열</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#부동산</span>
+                    <span>#N번방</span>
+                </div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 3</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 안철수</div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 4</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 심상정</div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 5</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 6</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 7</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 8</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 9</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+            </div>
+        </div>
+        <div class="main_content_box">
+            <div class="main_content_box_head">
+                <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
+                <div class="main_content_box_head_field">분야 1</div>
+            </div>            
+            <div class="main_content_box_body">                        
+                <h4 class="main_content_box_body_title">출력입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h6 class="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
+            </div>
+            <div class="main_content_box_tail">
+                <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main_compare" data-bs-toggle="modal" data-bs-target="#staticBackdropThree">
+        공약 비교하기
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="staticBackdropThree" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">공약 비교하기</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="overflow: auto;">
+                    <table class="table table-hover" style="text-align: center;">
+                        <thead>
+                            <tr style="border: 0px solid white;">
+                                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
+                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
+                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
+                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
+                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
+                            </tr>
+                            <tr>
+                                <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
+                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
+                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
+                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
+                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-active">
+                                <th scope="row">정당</th>
+                                <td>더불어민주당</td>
+                                <td>국민의힘</td>
+                                <td>국민의당</td>
+                                <td>정의당</td>
+                                <td>열린민주당</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">후보</th>
+                                <td>이재명</td>
+                                <td>윤석열</td>
+                                <td>안철수</td>
+                                <td>심상정</td>
+                                <td>???</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th scope="row">분야</th>
+                                <td>경제</td>
+                                <td>정치</td>
+                                <td>사회</td>
+                                <td>정치</td>
+                                <td>사회</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">제목</th>
+                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                            </tr>
+                            <tr class="table-active">
+                                <th scope="row">태그</th>
+                                <td>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그1</span>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그12</span>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
+                                </td>
+                                <td>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그12</span>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
+                                </td>
+                                <td>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그1</span>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
+                                </td>
+                                <td>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
+                                </td>
+                                <td>
+                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그1</span>
+                                </td>
+                            </tr>     
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" tdata-toggle="tooltip" data-placement="left">
+            <div id="back-to-top-circle">
+                <i class="fas fa-chevron-up"></i>
+                <span>맨 위로</span>
+            </div>
+        </a>
+    </div>
 </body>
-<script src="index.js"></script>
+<script src="../../static/fo/index.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('#back-to-top').fadeIn();
+        } 
+        else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+
+    // scroll body to 0px on click
+    $('#back-to-top').click(function () {
+        $('#back-to-top').tooltip('hide');
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+
+    $('#back-to-top').tooltip('show');
+</script>
 </html>
