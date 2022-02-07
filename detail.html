@@ -6,75 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
     <title>공약 상세</title>
+    <link rel="stylesheet" href="../../static/css/bootstrap.css">
     <link rel="stylesheet" href="../../static/fo/style.css">
-    <!-- <link rel="stylesheet" href="../../static/css/bootstrap.css"> -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div id="detail_head" style="display: flex; justify-content: space-between; align-items: center; padding: 0% 4%;">
-        <i class="fas fa-chevron-left fa-2x"></i>
-        <h2 id="search_title">공약 상세</h2>
-        <i id="detail_head_share" class="fas fa-share-square fa-2x"></i>
+    <div id="detail_head">
+        <i id="detail_head_previous" class="fas fa-chevron-left fa-lg"></i>
+        <h3 id="search_title">공약 상세</h3>
+        <i id="detail_head_share" class="fas fa-share-square fa-lg"></i>
     </div>
-    <div id="detail_body" style="padding: 0% 4%;">
-        <div style="padding: 10px 0px" id="detail_body_image" >
+    <div id="detail_body">
+        <div id="detail_body_image">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCosNE8U8r4l6IY0NHJ7icaHynM8gFLQimNg&usqp=CAU" width="100%">
         </div>
-        <div style="padding: 10px 4px" id="detail_body_title">
-            <h3>[OO분야]</h3>
-            <h1 style="margin-top: -20px; padding-bottom: 4px; border-bottom: 1px solid black;">제목입니다.</h1>
+        <div id="detail_body_intro">
+            <h4 id="detail_body_field">분야 1</h4>
+            <h1 id="detail_body_title">제목입니다.</h1>
         </div>
-        <div style="border: 1px solid black; padding: 4px 10px" id="detail_body_content">
-            <h3>공약내용공약내용공약내용공약내용공약내용 공약내용공약내용공약내용 공약내용공약내용공약내용 공약내용공약내용공약내용공약내용공약내용공약내용공약내용공약내용공약내용공약내용공약내용공약내용공약내용</h3>
+        <div id="detail_body_content">
+            <h4>산세리프(Sans-serif)는 획의 삐침이 없는 글씨체를 뜻하며, 한글의 돋움체(고딕체)에 해당된다. 산세리프라는 말은 프랑스어 sans serif를 소리나는대로 번역한 것이며, "획의 삐침 없이"라는 뜻이다.</h4>
         </div>
-        <div style="border: 1px solid black; padding: 10px;" id="detail_body_tag">
-            <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px;">#태그1</span>
-            <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px;">#태그12</span>
-            <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px;">#태그123</span>
+        <div id="detail_body_tag">
+            <span class="detail_body_tag_content">#태그1</span>
+            <span class="detail_body_tag_content">#태그12</span>
+            <span class="detail_body_tag_content">#태그123</span>
+            <span class="detail_body_tag_content">#태그123</span>
+            <span class="detail_body_tag_content">#태그12</span>
         </div>
-        <div style="border: 1px solid black; padding: 0px 10px" id="detail_body_name">
-            <h3><a href="candidate_detail.html" style="text-decoration: none; color: black;">[소속 정당] OOO 후보 <i class="fas fa-chevron-right"></i></a></h3>
+        <div id="detail_body_name">
+            <h4><a id="detail_body_name_href" href="#">[소속 정당] OOO 후보 <i class="fas fa-chevron-right"></i></a></h4>
         </div>
-        <div style="border: 1px solid black; padding: 0px 10px" id="detail_body_source">
-            <h4>출처: http://127.0.0.1:5500/src/fo/detail.html</h4>
+        <div id="detail_body_source">
+            <p>출처: http://127.0.0.1:5500/src/fo/detail.html</p>
         </div>
-        <div id="detail_body_related_promise">
-            <h2 style="text-align: center; border-bottom: 1px solid black; padding-bottom: 4px;">관련 공약</h2>
-            <div class="main_content_box" style="margin-top: 10px; border: 1px solid black;">
-                <div class="main_content_box_head" style="display: flex; align-items: center;">
-                    <div class="main_content_box_head_checkbox" style="padding: 12px 4px 6px 7px; border-right: 1px solid black;;"><input type="checkbox" style="zoom: 1.5;">&nbsp;</div>
-                    <div class="main_content_box_head_field" style="padding: 4px 8px; margin: auto 8px; border-radius: 10%;">분야 5</div>
+    </div>
+    <br>
+    <div id="detail_tail">
+        <div id="detail_tail_related_promise">
+            <h3 id="detail_tail_related_promise_title">관련 공약</h3>
+            <div class="detail_tail_content_box">
+                <div class="detail_tail_content_box_head">
+                    <div class="detail_tail_content_box_head_field">분야 5</div>
                 </div>            
-                <div class="main_content_box_body" style="padding: 2%; border-top: 1px solid black;">                        
-                    <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
-                    <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html" style="text-decoration: none; color: black;">...더보기</a></h6>
+                <div class="detail_tail_content_box_body">                        
+                    <h4 class="detail_tail_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                    <h6 class="detail_tail_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
                 </div>
-                <div class="main_content_box_tail" style="display: flex; justify-content: space-between; padding: 0% 2%; border-top: 1px solid black;">
-                    <div class="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
+                <div class="detail_tail_content_box_tail">
+                    <div class="detail_tail_content_box_tail_name">[소속정당] 후보이름</div>
                 </div>
             </div>
-            <div class="main_content_box" style="margin-top: 10px; border: 1px solid black;">
-                <div class="main_content_box_head" style="display: flex; align-items: center;">
-                    <div class="main_content_box_head_checkbox" style="padding: 12px 4px 6px 7px; border-right: 1px solid black;;"><input type="checkbox" style="zoom: 1.5;">&nbsp;</div>
-                    <div class="main_content_box_head_field" style="padding: 4px 8px; margin: auto 8px; border-radius: 10%;">분야 5</div>
+            <div class="detail_tail_content_box">
+                <div class="detail_tail_content_box_head">
+                    <div class="detail_tail_content_box_head_field">분야 5</div>
                 </div>            
-                <div class="main_content_box_body" style="padding: 2%; border-top: 1px solid black;">                        
-                    <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
-                    <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html" style="text-decoration: none; color: black;">...더보기</a></h6>
+                <div class="detail_tail_content_box_body">                        
+                    <h4 class="detail_tail_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                    <h6 class="detail_tail_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="detail.html">...더보기</a></h6>
                 </div>
-                <div class="main_content_box_tail" style="display: flex; justify-content: space-between; padding: 0% 2%; border-top: 1px solid black;">
-                    <div class="main_content_box_tail_name" style="padding: 2px 0px;">[소속정당] 후보이름</div>
+                <div class="detail_tail_content_box_tail">
+                    <div class="detail_tail_content_box_tail_name">[소속정당] 후보이름</div>
                 </div>
             </div>
         </div>
-        <div id="detail_body_related_content">
-            <h2 style="text-align: center;">관련 컨텐츠</h2>
-            <div style="border: 1px solid black; padding: 0% 2%;">
-                <h3>제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.</h3>
+        <div id="detail_tail_related_content">
+            <h3 id="detail_tail_related_content_title">관련 컨텐츠</h3>
+            <div class="detail_tail_related_content_box">
+                <h4>제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다. <a href="#">...더보기</a></h4>
+            </div>
+            <div class="detail_tail_related_content_box">
+                <h4>제목입니다.제목입니다.제목입니다.제목입니다.제목입니다.제목입니다. <a href="#">...더보기</a></h4>
             </div>
         </div>
     </div>
-    <div id="detail_tail" style="padding: 2% 4%;"></div>
+    <div>
+        <a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" tdata-toggle="tooltip" data-placement="left">
+            <div id="back-to-top-circle">
+                <i class="fas fa-chevron-up"></i>
+                <span>맨 위로</span>
+            </div>
+        </a>
+    </div>
 </body>
 <script src="../../static/fo/detail.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script>
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 200) {
+            $('#back-to-top').fadeIn();
+        } 
+        else {
+            $('#back-to-top').fadeOut();
+        }
+    });
+
+    // scroll body to 0px on click
+    $('#back-to-top').click(function () {
+        $('#back-to-top').tooltip('hide');
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        return false;
+    });
+
+    $('#back-to-top').tooltip('show');
+</script>
 </html>
