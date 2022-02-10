@@ -68,11 +68,57 @@ function searchMainContentbyKeyword(event){
             newDivTail.appendChild(newDivTailName);
             newDiv.appendChild(newDivTail);
            
+            newDiv.style.borderLeft = "1px solid black";
+            newDiv.style.borderRight = "1px solid black";
+            newDiv.style.borderTop = "1px solid black";
+            if(i == mainContentBox.length - 1){
+                newDiv.style.borderBottom = "1px solid black";
+            }
+            else{
+                newDiv.style.borderBottom = "0px solid black";    
+            }
+            
             modalSearchResult.appendChild(newDiv);
         }
     }
     const modalBodyText = document.querySelector(".modal-body p");
     modalBodyText.innerText = `'${modalSearchKeyword.value}'에 대한 검색 결과: ${searchResultCount}개`;
+
+    const searchContentTag = modalSearchResult.querySelectorAll(".main_content_box_head_field");
+    for(i = 0; i < searchContentTag.length; i++){
+        switch(searchContentTag[i].innerText){
+            case '분야 1':
+                searchContentTag[i].style.backgroundColor = '#DA75FF';
+                break;
+            case '분야 2':
+                searchContentTag[i].style.backgroundColor = '#6295F3';
+                break;
+            case '분야 3':
+                searchContentTag[i].style.backgroundColor = '#43C5CD';
+                break;
+            case '분야 4':
+                searchContentTag[i].style.backgroundColor = '#05CC91';
+                break;
+            case '분야 5':
+                searchContentTag[i].style.backgroundColor = '#5FD80E';
+                break;
+            case '분야 6':
+                searchContentTag[i].style.backgroundColor = '#FFBA4C';
+                break;
+            case '분야 7':
+                searchContentTag[i].style.backgroundColor = '#FC8481';
+                break;
+            case '분야 8':
+                searchContentTag[i].style.backgroundColor = '#F3627D';
+                break;
+            case '분야 9':
+                searchContentTag[i].style.backgroundColor = '#FA84EE';
+                break;
+            default:
+                searchContentTag[i].style.backgroundColor = 'white';
+                break;
+        }
+    }
 }
 
 //후보 보이기
@@ -257,19 +303,22 @@ function checkCount(event){
         mainCompare.style.display = "none";
     }
     else if(checkCountNum > 0 && checkCountNum <= 5){
-        mainCompare.style.display = "";
+        mainCompare.style.display = "block";
+        console.log(mainCompare)
     }
     if(checkCountNum > 5){
         alert("최대 5개까지 비교하실 수 있습니다.");
         event.preventDefault();
     }
 }
-// checkCount();
 
 //필터
 //로딩 작업 추후 개발 예정...
+
 const filterSubmit = document.querySelector("#filter_submit");
 filterSubmit.addEventListener("click", filterContent);
+filterSubmit.addEventListener("click", filterContent);
+
 const filterCandidate = document.querySelector("#filter_by_candidate");
 const filterKeyword = document.querySelector("#filter_by_keyword");
 const filterCandidateAllInput = filterCandidate.querySelectorAll("input");
@@ -277,21 +326,62 @@ const filterCandidateAllLabel = filterCandidate.querySelectorAll("label");
 const filterKeywordAllInput = filterKeyword.querySelectorAll("input");
 const filterKeywordAllLabel = filterKeyword.querySelectorAll("label");
 
-function filterContent(){
-    //선택된 거 두개 값 가져오기
-    //filterCandidate가 박스 내 후보자 이름이랑 같으면... or filterKeyword가 박스 내 태그에 있으면...
-    //display = "" else display = "none"
-    let filterCandidateTargetInput = "";
+//"모든 후보" / 전체 클릭
+
+mainContentCheckbox.forEach(function(checked){
+    checked.addEventListener("click", checkCount);
+})
+
+filterCandidateAllInput.forEach(function(targetFilter){
+    targetFilter.addEventListener("click", candidateFilterOneOrMany);
+});
+
+function candidateFilterOneOrMany(event){
+    if(event.path[0].id == "btnradio1"){
+        if(filterCandidateAllInput[0].checked == true){
+            for(i = 1; i < filterCandidateAllInput.length; i++){
+                if(filterCandidateAllInput[i].checked == true){
+                    filterCandidateAllInput[i].checked = false;
+                }
+            }
+        }
+    }
+    else{
+        filterCandidateAllInput[0].checked = false;
+    }
+}
+
+filterKeywordAllInput.forEach(function(targetFilter){
+    targetFilter.addEventListener("click", keywordFilterOneOrMany);
+});
+
+function keywordFilterOneOrMany(event){
+    if(event.path[0].id == "btnradio101"){
+        if(filterKeywordAllInput[0].checked == true){
+            for(i = 1; i < filterKeywordAllInput.length; i++){
+                if(filterKeywordAllInput[i].checked == true){
+                    filterKeywordAllInput[i].checked = false;
+                }
+            }
+        }
+    }
+    else{
+        filterKeywordAllInput[0].checked = false;
+    }
+}
+
+function filterContent(event){
     let filterCandidateTargetLabel = "";
-    let filterKeywordTargetInput = "";
     let filterKeywordTargetLabel = "";
+
+    const filterCandidateTargetArray = [];
+    const filterKeywordTargetArray = [];
 
     for(i = 0; i < filterCandidateAllInput.length; i++){
         if(filterCandidateAllInput[i].checked){
             filterCandidateTargetInput = filterCandidateAllInput[i]; //input 찾기
             filterCandidateTargetLabel = filterCandidateAllLabel[i]; //label 찾기
-            console.log("후보자 필터: ", filterCandidateTargetLabel.innerText);
-            break;
+            filterCandidateTargetArray.push(filterCandidateTargetLabel.innerText);
         }
     }
 
@@ -299,86 +389,72 @@ function filterContent(){
         if(filterKeywordAllInput[i].checked){
             filterKeywordTargetInput = filterKeywordAllInput[i]; //input 찾기
             filterKeywordTargetLabel = filterKeywordAllLabel[i]; //label 찾기
-            console.log("키워드 필터: ", filterKeywordTargetLabel.innerText);
-            break;
+            filterKeywordTargetArray.push(filterKeywordTargetLabel.innerText);
         }
     }
+    
+    console.log(filterCandidateTargetArray);
+    console.log(filterKeywordTargetArray);
+    if(filterCandidateTargetArray.length == 0 || filterKeywordTargetArray.length == 0){
+        alert("필터 선택해!");
+        return 0;
+    }
+
 
     for(i = 0; i < contentBox.length; i++){
+        let candidateTest = 0;
+        let keywordTest = 0;
+        
         const contentBoxCandidate = contentBox[i].querySelector(".main_content_box_tail_name");
+        for(j = 0; j < filterCandidateTargetArray.length; j++){
+            if(contentBoxCandidate.innerText.includes(filterCandidateTargetArray[j]) || filterCandidateTargetArray[j] == "모든 후보"){
+                candidateTest = 1;
+                console.log(i, " 번째 박스는 candidateTest 합격!")
+            }
+        }
         const contentBoxTag = contentBox[i].querySelectorAll(".main_content_box_tail_tag span");
-        if(contentBoxTag.length > 0){
-            for(j = 0; j < contentBoxTag.length; j++){
-                if((contentBoxCandidate.innerText.includes(filterCandidateTargetLabel.innerText) || filterCandidateTargetLabel.innerText == "모든 후보") && (contentBoxTag[j].innerText == filterKeywordTargetLabel.innerText || filterKeywordTargetLabel.innerText == "#전체")){
-                    contentBox[i].style.display = "";
-                    break;
-                }
-                else{
-                    contentBox[i].style.display = "none";
+        for(j = 0; j < contentBoxTag.length; j++){
+            for(k = 0; k < filterKeywordTargetArray.length; k++){
+                if(filterKeywordTargetArray[k].includes(contentBoxTag[j].innerText) || filterKeywordTargetArray[k] == "#전체"){
+                    keywordTest = 1;
+                    console.log(i, " 번째 박스는 keywordTest 합격!")
                 }
             }
         }
+
+        if(candidateTest && keywordTest){
+            contentBox[i].style.display = ""
+        }
         else{
-            if((contentBoxCandidate.innerText.includes(filterCandidateTargetLabel.innerText) || filterCandidateTargetLabel.innerText == "모든 후보") && (filterKeywordTargetLabel.innerText == "#전체")){
-                contentBox[i].style.display = "";
-            }
-            else{
-                contentBox[i].style.display = "none";
-            }
+            contentBox[i].style.display = "none"
         }
     }
     alert("필터 적용이 되었습니다.");
-
-    // 후보자 필터
-    // for(i = 0; i < filterCandidateAllinput.length; i++){
-    //     if(filterCandidateAllinput[i].checked){
-    //         for(j = 0; j < contentBox.length; j++){
-    //             const contentBoxName = contentBox[j].querySelector(".main_content_box_tail_name");
-    //             if(contentBoxName.innerText.includes(filterCandidateAlllabel[i].innerText) || filterCandidateAlllabel[i].innerText == "모든 후보"){
-    //                 contentBox[j].style.display = "";
-    //             }
-    //             else{
-    //                 contentBox[j].style.display = "none";
-    //             }
-    //         }
-    //     }
-    // }
-
-    // 키워드 필터
-    // for(i = 0; i < filterKeywordAllinput.length; i++){
-    //     if(filterKeywordAllinput[i].checked){
-    //         console.log(filterKeywordAlllabel[i].innerText);
-    //         for(j = 0; j < contentBox.length; j++){
-    //             const contentBoxTags = contentBox[j].querySelectorAll(".main_content_box_tail_tag span");
-    //             if(contentBoxTags.length > 0){
-    //                 for(k = 0; k < contentBoxTags.length; k++){
-    //                     if(contentBoxTags[k].innerText == filterKeywordAlllabel[i].innerText || filterKeywordAlllabel[i].innerText == "#전체"){
-    //                         contentBox[j].style.display = "";
-    //                         break;
-    //                     }
-    //                     else{
-    //                         contentBox[j].style.display = "none";
-    //                     }
-    //                 }
-    //             }
-    //             else if(filterKeywordAlllabel[i].innerText == "#전체"){
-    //                 contentBox[j].style.display = "";
-    //             }
-    //             else{
-    //                 contentBox[j].style.display = "none";
-    //             }
-                
-    //         }
-    //     }
-    // }
 }
 
 const filterInit = document.querySelector("#filter_init");
 filterInit.addEventListener("click", filterInitialize);
 
 function filterInitialize(){
-    filterCandidateAllinput[0].checked = "true";
-    filterKeywordAllinput[0].checked = "true";
+    filterCandidateAllInput[0].checked = true;
+    filterKeywordAllInput[0].checked = true;
+
+    for(i = 1; i < filterCandidateAllInput.length; i++){
+        if( filterCandidateAllInput[i].checked = false){
+            continue;
+        }
+        else{
+            filterCandidateAllInput[i].checked = false;    
+        }
+    }
+    for(i = 1; i < filterKeywordAllInput.length; i++){
+        if( filterKeywordAllInput[i].checked = false){
+            continue;
+        }
+        else{
+            filterKeywordAllInput[i].checked = false;    
+        }
+    }
 }
 
 //공약 비교하기

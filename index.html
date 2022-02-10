@@ -97,19 +97,19 @@
                     <div class="modal-body">
                         <div class="btn-group" id="filter_by_candidate" role="group" aria-label="Basic radio toggle button group">
                             <div class="filter_by_candidate_box">
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
+                                <input type="checkbox" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked="">
                                 <label class="btn btn-outline-primary" for="btnradio1">모든 후보</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                                <input type="checkbox" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="btnradio2">이재명</label>
                             </div>
-                            <div class="filter_by_candidate_box"> 
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                            <div class="filter_by_candidate_box">
+                                <input type="checkbox" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="btnradio3">윤석열</label>
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+                                <input type="checkbox" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="btnradio4">안철수</label>    
                             </div>
                             <div class="filter_by_candidate_box">
-                                <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+                                <input type="checkbox" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
                                 <label class="btn btn-outline-primary" for="btnradio5">심상정</label>
                             </div>
                         </div>
@@ -117,23 +117,24 @@
                     <div class="modal-header">
                         <h5 class="modal-title">키워드별로 공약보기</h5>
                     </div>
+                    
                     <div class="modal-body">
-                        <div id="filter_by_keyword" class="btn-group" role="group" aria-label="Basic radio toggle button group" style="display: block;">
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio101" autocomplete="off" checked="">
+                        <div id="filter_by_keyword" class="btn-group" role="group" style="display: inline-block;">
+                            <input type="checkbox" class="btn-check" id="btnradio101" name="btnradios" autocomplete="off" checked="">
                             <label class="btn btn-outline-primary" for="btnradio101">#전체</label>
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio102" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btnradio102" name="btnradios" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btnradio102">#N번방</label>
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio103" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btnradio103" name="btnradios" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btnradio103">#중국</label>
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio104" autocomplete="off">
-                            <label class="btn btn-outline-primary" for="btnradio104">#암호화폐</label>    
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio105" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btnradio104" name="btnradios" autocomplete="off">
+                            <label class="btn btn-outline-primary" for="btnradio104">#암호화폐</label>
+                            <input type="checkbox" class="btn-check" id="btnradio105" name="btnradios" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btnradio105">#코로나</label>
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio106" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btnradio106" name="btnradios" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btnradio106">#부동산</label>
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio107" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btnradio107" name="btnradios" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btnradio107">#금리</label>
-                            <input type="radio" class="btn-check" name="btnradio2" id="btnradio108" autocomplete="off">
+                            <input type="checkbox" class="btn-check" id="btnradio108" name="btnradios" autocomplete="off">
                             <label class="btn btn-outline-primary" for="btnradio108">#미국</label>
                         </div>
                     </div>
@@ -160,8 +161,7 @@
                 <div class="main_content_box_tail_name">[소속정당] 이재명</div>
                 <div class="main_content_box_tail_tag">
                     <span>#N번방</span>
-                    <span>#미국</span>
-                    <span>#코로나</span>
+                    <span>#중국</span>
                 </div>
             </div>
         </div>
@@ -177,8 +177,8 @@
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 윤석열</div>
                 <div class="main_content_box_tail_tag">
-                    <span>#부동산</span>
-                    <span>#N번방</span>
+                    <span>#중국</span>
+                    <span>#암호화폐</span>
                 </div>
             </div>
         </div>
@@ -193,6 +193,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 안철수</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#암호화폐</span>
+                </div>
             </div>
         </div>
         <div class="main_content_box">
@@ -206,6 +210,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 심상정</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#부동산</span>
+                </div>
             </div>
         </div>
         <div class="main_content_box">
@@ -219,6 +227,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#부동산</span>
+                </div>
             </div>
         </div>
         <div class="main_content_box">
@@ -232,6 +244,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#부동산</span>
+                </div>
             </div>
         </div>
         <div class="main_content_box">
@@ -245,6 +261,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#부동산</span>
+                </div>
             </div>
         </div>
         <div class="main_content_box">
@@ -258,6 +278,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#부동산</span>
+                </div>
             </div>
         </div>
         <div class="main_content_box">
@@ -271,6 +295,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#부동산</span>
+                </div>
             </div>
         </div>
         <div class="main_content_box">
@@ -284,6 +312,10 @@
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 후보이름</div>
+                <div class="main_content_box_tail_tag">
+                    <span>#코로나</span>
+                    <span>#부동산</span>
+                </div>
             </div>
         </div>
     </div>

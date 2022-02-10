@@ -94,4 +94,7 @@ else{
     detailBodyNameAnchor.href = "";
 }
 
-//detail 내용 가져오기
+//공약 내용 innerHTML
+const promiseContent = document.querySelector("#detail_body_content h4");
+const promiseContentText = promiseContent.innerText;
+promiseContent.innerHTML = promiseContentText;
