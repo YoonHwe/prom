@@ -563,3 +563,13 @@ a{
     border-radius: 18%;
     opacity: .9;
 }
+
+/* footer.html */
+#footer{
+    padding: 0% 2%;
+    padding-top: 16px;
+    border-top: 1px solid black;
+}
+#footer p:last-child{
+    margin-top: -16px;
+}
