@@ -21,6 +21,7 @@ else{
 //로딩 작업 추후 개발 예정...
 const modalSearch = document.querySelector("#modal_search");
 const modalSearchResult = document.querySelector(".modal-body");
+const field = document.querySelectorAll(".main_first_field_box_set div");
 modalSearch.addEventListener("submit", searchMainContentbyKeyword);
 function searchMainContentbyKeyword(event){
     event.preventDefault();
@@ -53,7 +54,7 @@ function searchMainContentbyKeyword(event){
             newDivBodyContent.innerText = mainContentBox[i].querySelector(".main_content_box_body_content").innerText;
             newDivBodyContent.innerText = newDivBodyContent.innerText.substr(0, newDivBodyContent.innerText.length - 6);
             const newDivBodyContentAnchor = document.createElement("a");
-            newDivBodyContentAnchor.href = mainContentBox[i].querySelector(".main_content_box_body_content a").href;
+            newDivBodyContentAnchor.href = mainContentBox[i].querySelector(".main_content_box_body a").href;
             newDivBodyContentAnchor.innerText = mainContentBox[i].querySelector(".main_content_box_body_content a").innerText;
             newDivBodyContent.appendChild(newDivBodyContentAnchor);
             newDivBody.appendChild(newDivBodyTitle);
@@ -87,35 +88,36 @@ function searchMainContentbyKeyword(event){
     const searchContentTag = modalSearchResult.querySelectorAll(".main_content_box_head_field");
     for(i = 0; i < searchContentTag.length; i++){
         switch(searchContentTag[i].innerText){
-            case '분야 1':
+            case field[1].innerText:
                 searchContentTag[i].style.backgroundColor = '#DA75FF';
                 break;
-            case '분야 2':
+            case field[2].innerText:
                 searchContentTag[i].style.backgroundColor = '#6295F3';
                 break;
-            case '분야 3':
+            case field[3].innerText:
                 searchContentTag[i].style.backgroundColor = '#43C5CD';
                 break;
-            case '분야 4':
+            case field[4].innerText:
                 searchContentTag[i].style.backgroundColor = '#05CC91';
                 break;
-            case '분야 5':
+            case field[5].innerText:
                 searchContentTag[i].style.backgroundColor = '#5FD80E';
                 break;
-            case '분야 6':
+            case field[6].innerText:
                 searchContentTag[i].style.backgroundColor = '#FFBA4C';
                 break;
-            case '분야 7':
+            case field[7].innerText:
                 searchContentTag[i].style.backgroundColor = '#FC8481';
                 break;
-            case '분야 8':
+            case field[8].innerText:
                 searchContentTag[i].style.backgroundColor = '#F3627D';
                 break;
-            case '분야 9':
-                searchContentTag[i].style.backgroundColor = '#FA84EE';
-                break;
+            // case field[9].innerText:
+            //     searchContentTag[i].style.backgroundColor = '#FA84EE';
+            //     break;
             default:
                 searchContentTag[i].style.backgroundColor = 'white';
+                searchContentTag[i].style.border = '1px solid black';
                 break;
         }
     }
@@ -147,10 +149,9 @@ function changeCandidateButton(event){
 }
 
 //분야별로 공약 보기
-const field = document.querySelectorAll(".main_first_field_box_set div");
-const contentBox = document.querySelectorAll(".main_content_box"); 
-field[0].style.backgroundColor = "black";
-field[0].style.color = "white";
+// const field = document.querySelectorAll(".main_first_field_box_set div");
+const contentBox = document.querySelectorAll(".main_content_box");
+
 function giveInitialColor(){
     for(i = 0; i < field.length; i++){
         switch(i){
@@ -191,6 +192,10 @@ function giveInitialColor(){
         field[i].style.color = "black";
     }
 }
+
+giveInitialColor();
+field[0].style.backgroundColor = "black";
+field[0].style.color = "white";
 
 field.forEach(function(fieldEvent){
     fieldEvent.addEventListener("click", fieldFilter);
@@ -251,35 +256,36 @@ function fieldFilter(fieldEvent){
 const mainContentTag = document.querySelectorAll(".main_content_box_head_field");
 for(i = 0; i < mainContentTag.length; i++){
     switch(mainContentTag[i].innerText){
-        case '분야 1':
+        case field[1].innerText:
             mainContentTag[i].style.backgroundColor = '#DA75FF';
             break;
-        case '분야 2':
+        case field[2].innerText:
             mainContentTag[i].style.backgroundColor = '#6295F3';
             break;
-        case '분야 3':
+        case field[3].innerText:
             mainContentTag[i].style.backgroundColor = '#43C5CD';
             break;
-        case '분야 4':
+        case field[4].innerText:
             mainContentTag[i].style.backgroundColor = '#05CC91';
             break;
-        case '분야 5':
+        case field[5].innerText:
             mainContentTag[i].style.backgroundColor = '#5FD80E';
             break;
-        case '분야 6':
+        case field[6].innerText:
             mainContentTag[i].style.backgroundColor = '#FFBA4C';
             break;
-        case '분야 7':
+        case field[7].innerText:
             mainContentTag[i].style.backgroundColor = '#FC8481';
             break;
-        case '분야 8':
+        case field[8].innerText:
             mainContentTag[i].style.backgroundColor = '#F3627D';
             break;
-        case '분야 9':
-            mainContentTag[i].style.backgroundColor = '#FA84EE';
-            break;
+        // case field[9].innerText:
+        //     mainContentTag[i].style.backgroundColor = '#FA84EE';
+        //     break;
         default:
             mainContentTag[i].style.backgroundColor = 'white';
+            mainContentTag[i].style.border = '1px solid black';
             break;
     }
 }
@@ -326,8 +332,6 @@ const filterCandidateAllLabel = filterCandidate.querySelectorAll("label");
 const filterKeywordAllInput = filterKeyword.querySelectorAll("input");
 const filterKeywordAllLabel = filterKeyword.querySelectorAll("label");
 
-//"모든 후보" / 전체 클릭
-
 mainContentCheckbox.forEach(function(checked){
     checked.addEventListener("click", checkCount);
 })
@@ -337,7 +341,7 @@ filterCandidateAllInput.forEach(function(targetFilter){
 });
 
 function candidateFilterOneOrMany(event){
-    if(event.path[0].id == "btnradio1"){
+    if(event.path[0].id == "btnradio0"){
         if(filterCandidateAllInput[0].checked == true){
             for(i = 1; i < filterCandidateAllInput.length; i++){
                 if(filterCandidateAllInput[i].checked == true){
@@ -356,7 +360,7 @@ filterKeywordAllInput.forEach(function(targetFilter){
 });
 
 function keywordFilterOneOrMany(event){
-    if(event.path[0].id == "btnradio101"){
+    if(event.path[0].id == "btnradio100"){
         if(filterKeywordAllInput[0].checked == true){
             for(i = 1; i < filterKeywordAllInput.length; i++){
                 if(filterKeywordAllInput[i].checked == true){
@@ -396,7 +400,7 @@ function filterContent(event){
     console.log(filterCandidateTargetArray);
     console.log(filterKeywordTargetArray);
     if(filterCandidateTargetArray.length == 0 || filterKeywordTargetArray.length == 0){
-        alert("필터 선택해!");
+        alert("각 항목에서 최소한 하나 이상의 필터를 선택해야 합니다.");
         return 0;
     }
 
@@ -459,3 +463,148 @@ function filterInitialize(){
 
 //공약 비교하기
 //개발 예정..
+
+//mainContent의 스크롤 시 페이지 로딩
+mainCompare.addEventListener("click", showCompare);
+function showCompare(){
+    //체크된 것 무엇인지 우선 가져와
+    const compareInit = document.querySelectorAll(".compare_chosen");
+    if(compareInit.length > 0){
+        for(i = 0; i < compareInit.length; i++){
+            compareInit[i].remove();
+        }
+    }
+    const mainContentBox = document.querySelectorAll(".main_content_box");
+    for(i = 0; i < mainContentCheckbox.length; i++){
+        if(mainContentCheckbox[i].checked == true){
+            console.log(mainContentBox[i]);
+            //소속
+            const candidateName = mainContentBox[i].querySelector(".main_content_box_tail_name").innerText;
+            // console.log(candidateName);
+            const candidateNameInTable = document.createElement("td");
+            candidateNameInTable.innerText = candidateName;
+            candidateNameInTable.className = "compare_chosen"
+            const tableCandidate = document.querySelector("#table_candidate");
+            tableCandidate.appendChild(candidateNameInTable);
+            //이미지
+            let imageURL = "#";
+            switch(true){
+                case candidateName.includes("이재명"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138381/gicho/100138381.JPG';
+                    break;
+                case candidateName.includes("윤석열"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138362/gicho/100138362.JPG';
+                    break;
+                case candidateName.includes("심상정"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138383/gicho/100138383.JPG';
+                    break;
+                case candidateName.includes("안철수"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138392/gicho/100138392.JPG';
+                    break;
+                case candidateName.includes("오준호"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138395/gicho/100138395.JPG';
+                    break;
+                case candidateName.includes("허경영"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138378/gicho/100138378.JPG';
+                    break;
+                case candidateName.includes("이백윤"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138411/gicho/100138411.JPG';
+                    break;
+                case candidateName.includes("옥은호"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138489/gicho/100138489.JPG';
+                    break;
+                case candidateName.includes("김동연"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138373/gicho/100138373.JPG';
+                    break;
+                case candidateName.includes("김경재"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138380/gicho/100138380.JPG';
+                    break;
+                case candidateName.includes("조원진"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138379/gicho/100138379.JPG';
+                    break;
+                case candidateName.includes("김재연"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138375/gicho/100138375.JPG';
+                    break;
+                case candidateName.includes("이경희"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138531/gicho/100138531.JPG';
+                    break;
+                case candidateName.includes("김민찬"):
+                    imageURL = 'http://info.nec.go.kr/photo_20220309/Gsg1/Hb100138402/gicho/100138402.JPG';
+                    break;
+                default:
+                    imageURL = "#"
+                    break;
+            }
+            const candidateImageInTable = document.createElement("th");
+            candidateImageInTable.scope = "col";
+            const candidateImage = document.createElement("img");
+            candidateImage.src = imageURL;
+            candidateImageInTable.appendChild(candidateImage);
+            candidateImageInTable.className = "compare_chosen"
+            const tableImage = document.querySelector("#table_image");
+            tableImage.appendChild(candidateImageInTable); 
+
+            //공약보기 버튼
+            buttonHref = mainContentBox[i].querySelector(".main_content_box_body_content a").href;
+            const candidateButtonInTable = document.createElement("th");
+            candidateButtonInTable.scope = "col";
+            const candidateButton = document.createElement("button");
+            const candidateButtonAnchor = document.createElement("a");
+            candidateButtonAnchor.href = buttonHref
+            candidateButtonAnchor.target = "_blank";
+            candidateButton.type = "button";
+            candidateButton.className = "btn btn-outline-primary";
+            candidateButton.innerText = "공약 보기";
+            candidateButtonAnchor.appendChild(candidateButton);
+            candidateButtonInTable.appendChild(candidateButtonAnchor);
+            candidateButtonInTable.className = "compare_chosen"
+            const tableButton = document.querySelector("#table_button");
+            tableButton.appendChild(candidateButtonInTable);
+
+            //분야
+            const candidateFieldInTable = document.createElement("td");
+            const candidateField = mainContentBox[i].querySelector(".main_content_box_head_field").innerText;
+            candidateFieldInTable.innerText = candidateField;
+            candidateFieldInTable.className = "compare_chosen"
+            const tableField = document.querySelector("#table_field");
+            tableField.appendChild(candidateFieldInTable);
+
+            //제목
+            const candidateTitleInTable = document.createElement("td");
+            const candidateTitle = mainContentBox[i].querySelector(".main_content_box_body_title").innerText;
+            candidateTitleInTable.innerText = candidateTitle;
+            candidateTitleInTable.className = "compare_chosen"
+            const tableTitle= document.querySelector("#table_title");
+            tableTitle.appendChild(candidateTitleInTable);
+
+            //내용(요약)
+            const candidateSummaryInTable = document.createElement("td");
+            const candidateSummary = mainContentBox[i].querySelector(".main_content_box_body_content").innerText;
+            // console.log(candidateSummary);
+            if(candidateSummary.includes("...더보기")){
+                candidateSummaryInTable.innerText = candidateSummary.substr(0, candidateSummary.length - 6);
+            }
+            else{
+                candidateSummaryInTable.innerText = candidateSummary;
+            }
+            candidateSummaryInTable.className = "compare_chosen"
+            const tableSummary= document.querySelector("#table_summary");
+            tableSummary.appendChild(candidateSummaryInTable);
+
+            //태그
+            const candidateTagInTable = document.createElement("td");
+            const candidateTags = mainContentBox[i].querySelectorAll(".main_content_box_tail_tag span");
+            console.log(candidateTags);
+            console.log(candidateTags.length);
+            for(j = 0; j < candidateTags.length; j++){
+                const candidateTag = document.createElement("span");
+                candidateTag.innerText = candidateTags[j].innerText;
+                console.log(candidateTag);
+                candidateTagInTable.appendChild(candidateTag);
+            }
+            candidateTagInTable.className = "compare_chosen"
+            const tableTag = document.querySelector("#table_tag");
+            tableTag.appendChild(candidateTagInTable);
+        }
+    }
+}

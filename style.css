@@ -40,14 +40,40 @@ a{
     padding-top: 20px;
     padding-bottom: 10px;
 }
+@media (min-width: 768px) {
+	#main_first_top {
+        justify-content: space-between;
+        padding: 0% 12%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+	}
+}
 #main_first_title_upper, #main_first_title_lower{
     text-align: center;
     font-weight: 700;
 }
+@media (min-width: 768px) {
+	#main_first_title_upper, #main_first_title_lower {
+        text-align: start;
+	}
+}
+
 #main_first_search{
     position: absolute;
     right: 8%;
     font-size: 24px;
+    border-radius: 10px;
+    padding: 0px 10px;
+}
+#main_first_search input{
+    display: none;
+    border: 0px solid white;
+    /* padding: 0px 10px; */
+}
+@media (min-width: 768px) {
+	#main_first_search input {
+        display: inline;
+	}
 }
 #main_first i:hover{
     opacity: .5;
@@ -74,45 +100,20 @@ a{
 }
 .main_first_field_box_set div{
     border: 1px solid black;
-    border-radius: 10%;
-    width: 70px;
-    height: 40px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: max-content;
+    height: 40px;
     margin: 10px;
+    padding: 0px 10px;
 }
 .main_first_field_box_set div:hover{
     opacity: .5;
     cursor: pointer;
 }
-#main_first_field_box_set_one{
-    background-color: #DA75FF;
-}
-#main_first_field_box_set_two{
-    background-color: #6295F3;;
-}
-#main_first_field_box_set_three{
-    background-color: #43C5CD;;
-}
-#main_first_field_box_set_four{
-    background-color: #05CC91;;
-}
-#main_first_field_box_set_five{
-    background-color: #5FD80E;;
-}
-#main_first_field_box_set_six{
-    background-color: #FFBA4C;;
-}
-#main_first_field_box_set_seven{
-    background-color: #FC8481;;
-}
-#main_first_field_box_set_eight{
-    background-color: #F3627D;;
-}
-#main_first_field_box_set_nine{
-    background-color: #FA84EE;;
-}
+
 #main_second{
     padding: 1% 4% 2% 4%;
     display: flex;
@@ -192,7 +193,7 @@ a{
 .main_content_box_head_field{
     padding: 4px 8px;
     margin: auto 8px;
-    border-radius: 10%;
+    border-radius: 10px;
 }
 .main_content_box_body{
     padding: 2%;
@@ -209,7 +210,7 @@ a{
     padding: 2px 0px;
 }
 .main_content_box_tail_tag span{
-    display: none;
+    /* display: none; */
     border: 1px solid black;
     border-radius: 10px;
     padding: 2px 4px;
@@ -572,4 +573,26 @@ a{
 }
 #footer p:last-child{
     margin-top: -16px;
+}
+
+
+/* 공약 비교하기 관련 */
+#table_image{
+    border: 0px solid white;
+}
+#table_image img{
+    width: 125px;
+    height: 150px;
+}
+#table_tag span{
+    display: block;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 2px 4px;
+    margin: 2px auto;
+    width: max-content;
+}
+
+#main_compare{
+    background-color: white;
 }

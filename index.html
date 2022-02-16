@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous"></script>
     <title>홈 화면</title>
-    <link rel="stylesheet" href="../../static/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../../static/fo/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="main_first">
@@ -17,8 +17,9 @@
                 <h3 id="main_first_title_upper">제 20대 대통령 선거</h3>
                 <h4 id="main_first_title_lower">D - ?</h4>
             </div>
-            <div id="main_first_search">
-                <i data-bs-toggle="modal" data-bs-target="#staticBackdrop" class="fas fa-search"></i>
+            <div id="main_first_search" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="border: 3px solid black;">
+                <input placeholder="공약을 검색할 수 있어요!">
+                <i class="fas fa-search"></i>
             </div>
         </div>
         <!-- Modal -->
@@ -43,38 +44,30 @@
         <div id="main_first_field_box">
             <div class="main_first_field_box_set">
                 <div id="main_first_field_box_set_all">전체</div>
-                <div id="main_first_field_box_set_one">분야 1</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_two">분야 2</div>
-                <div id="main_first_field_box_set_three">분야 3</div>
+                <div id="main_first_field_box_set_two">과학기술/정보통신</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_four">분야 4</div>
-                <div id="main_first_field_box_set_five">분야 5</div>
+                <div id="main_first_field_box_set_four">보건의료/환경</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_six">분야 6</div>
-                <div id="main_first_field_box_set_seven">분야 7</div>
+                <div id="main_first_field_box_set_six">정치행정/사범</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_eight">분야 8</div>
-                <div id="main_first_field_box_set_nine">분야 9</div>
+                <div id="main_first_field_box_set_eight">재정/경제/복지</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_ten">분야 10</div>
-                <div id="main_first_field_box_set_eleven">분야 11</div>
+                <div id="main_first_field_box_set_ten">국방/통일/외교통상</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_twelve">분야 12</div>
-                <div id="main_first_field_box_set_thirteen">분야 13</div>
+                <div id="main_first_field_box_set_twelve">산업자원/건설교통</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_fourteen">분야 14</div>
-                <div id="main_first_field_box_set_fifteen">분야 15</div>
+                <div id="main_first_field_box_set_fourteen">교육/인적자원</div>
             </div>
             <div class="main_first_field_box_set">
-                <div id="main_first_field_box_set_sixteen">분야 16</div>
+                <div id="main_first_field_box_set_sixteen">문화/언론/관광/스포츠</div>
             </div>
         </div>
     </div>
@@ -151,11 +144,11 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 1</div>
+                <div class="main_content_box_head_field">분야1</div>
             </div>            
             <div class="main_content_box_body">                     
-                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
-                <h6 class="main_content_box_body_content">출력입니다. 내용입니다. 내용입니다. 내용입니다. <a href="/fo/detail">...더보기</a></h6>
+                <h4 class="main_content_box_body_title">Test</h4>
+                <h6 class="main_content_box_body_content">Test <a href="/fo/detail">...더보기</a></h6>
             </div>
             <div class="main_content_box_tail">
                 <div class="main_content_box_tail_name">[소속정당] 이재명</div>
@@ -168,10 +161,10 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 2</div>
+                <div class="main_content_box_head_field">분야2</div>
             </div>            
             <div class="main_content_box_body">                        
-                <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
+                <h4 class="main_content_box_body_title">Test2</h4>
                 <h6 class="main_content_box_body_content">내용입니다. 내용입니다. 내용입니다. 내용입니다. <a href="/fo/detail">...더보기</a></h6>
             </div>
             <div class="main_content_box_tail">
@@ -185,7 +178,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 3</div>
+                <div class="main_content_box_head_field">보건의료/환경</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -202,7 +195,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 4</div>
+                <div class="main_content_box_head_field">보건의료/환경</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -219,7 +212,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 5</div>
+                <div class="main_content_box_head_field">재정/경제/복지</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -236,7 +229,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 6</div>
+                <div class="main_content_box_head_field">재정/경제/복지</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -253,7 +246,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 7</div>
+                <div class="main_content_box_head_field">재정/경제/복지</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -270,7 +263,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 8</div>
+                <div class="main_content_box_head_field">산업자원/건설교통</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -287,7 +280,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 9</div>
+                <div class="main_content_box_head_field">산업자원/건설교통</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">제목입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -304,7 +297,7 @@
         <div class="main_content_box">
             <div class="main_content_box_head">
                 <div class="main_content_box_head_checkbox"><input type="checkbox">&nbsp;</div>
-                <div class="main_content_box_head_field">분야 1</div>
+                <div class="main_content_box_head_field">과학기술/정보통신</div>
             </div>            
             <div class="main_content_box_body">                        
                 <h4 class="main_content_box_body_title">출력입니다. 제목입니다. 제목입니다. 제목입니다.</h4>
@@ -319,7 +312,6 @@
             </div>
         </div>
     </div>
-
     <div id="main_compare" data-bs-toggle="modal" data-bs-target="#staticBackdropThree">
         공약 비교하기
     </div>
@@ -331,80 +323,42 @@
                     <h5 class="modal-title" id="staticBackdropLabel">공약 비교하기</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body" style="overflow: auto;">
-                    <table class="table table-hover" style="text-align: center;">
+                <div class="modal-body" id="modal_compare" style="overflow: auto;">
+                    <table class="table table-hover" id="modal_compare_table" style="text-align: center;">
                         <thead>
-                            <tr style="border: 0px solid white;">
+                            <tr id="table_image">
                                 <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
-                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
-                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
-                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
-                                <th scope="col"><img src="#" style="width: 125px; height: 150px;"></th>
+                                <!-- <th scope="col"><img src="#"></th> -->
                             </tr>
-                            <tr>
+                            <tr id="table_button">
                                 <th scope="col">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
-                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
-                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
-                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
-                                <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th>
+                                <!-- <th scope="col"><button type="button" class="btn btn-outline-primary">공약 보기</button></th> -->
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="table-active">
-                                <th scope="row">정당</th>
-                                <td>더불어민주당</td>
-                                <td>국민의힘</td>
-                                <td>국민의당</td>
-                                <td>정의당</td>
-                                <td>열린민주당</td>
-                            </tr>
-                            <tr>
+                            <tr class="table-active" id="table_candidate">
                                 <th scope="row">후보</th>
-                                <td>이재명</td>
-                                <td>윤석열</td>
-                                <td>안철수</td>
-                                <td>심상정</td>
-                                <td>???</td>
+                                <!-- <td>[더불어민주당] 이재명</td> -->
                             </tr>
-                            <tr class="table-active">
+                            <tr id="table_field">
                                 <th scope="row">분야</th>
-                                <td>경제</td>
-                                <td>정치</td>
-                                <td>사회</td>
-                                <td>정치</td>
-                                <td>사회</td>
+                                <!-- <td>경제</td> -->
                             </tr>
-                            <tr>
+                            <tr class="table-active" id="table_title">
                                 <th scope="row">제목</th>
-                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
-                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
-                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
-                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
-                                <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td>
+                                <!-- <td>제목입니다. 제목입니다. 제목입니다. 제목입니다.</td> -->
                             </tr>
-                            <tr class="table-active">
+                            <tr id="table_summary">
+                                <th scope="row">내용</th>
+                                <!-- <td>내용입니다. 내용입니다. 내용입니다. 내용입니다.</td> -->
+                            </tr>
+                            <tr class="table-active" id="table_tag">
                                 <th scope="row">태그</th>
-                                <td>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그1</span>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그12</span>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
-                                </td>
-                                <td>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그12</span>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
-                                </td>
-                                <td>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그1</span>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
-                                </td>
-                                <td>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그123</span>
-                                </td>
-                                <td>
-                                    <span style="border: 1px solid black; border-radius: 10px; padding: 2px 4px; margin: 0px 0px">#태그1</span>
-                                </td>
+                                <!-- <td>
+                                    <span>#태그1</span>
+                                    <span>#태그12</span>
+                                    <span>#태그123</span>
+                                </td> -->
                             </tr>     
                         </tbody>
                     </table>
@@ -423,8 +377,12 @@
             </div>
         </a>
     </div>
+    <div id="footer">
+        <p>공약을 본다 공식 블로그 : <a href="https://blog.naver.com/project_edw" target="_blank">https://blog.naver.com/project_edw</a></p>
+        <p>문의사항 : project_edw@naver.com</p>
+    </div>
 </body>
-<script src="../../static/fo/index.js"></script>
+<script src="index.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
     $(window).scroll(function () {
@@ -436,7 +394,6 @@
         }
     });
 
-    // scroll body to 0px on click
     $('#back-to-top').click(function () {
         $('#back-to-top').tooltip('hide');
         $('body,html').animate({
@@ -444,7 +401,5 @@
         }, 800);
         return false;
     });
-
-    $('#back-to-top').tooltip('show');
 </script>
 </html>
